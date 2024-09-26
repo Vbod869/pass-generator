@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #fff; /* White background for the login container */
+    padding: 30px; /* Padding for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    width: 400px; /* Fixed width for the container */
+}
+
+h3 {
+    text-align: center; /* Centered text */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 24px; /* Font size for the heading */
+    color: #333; /* Darker text color */
+}
+
+.input-field {
+    margin-bottom: 20px; /* Space below each input field */
+}
+
+.input-field label {
+    display: block; /* Block display for labels */
+    font-size: 14px; /* Font size for labels */
+    color: #555; /* Color for labels */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+.input-field input {
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Padding inside the input fields */
+    border-radius: 5px; /* Rounded corners for inputs */
+    border: 1px solid #ddd; /* Light gray border */
+    font-size: 16px; /* Font size for inputs */
+}
+
+button {
+    width: 100%; /* Full width for buttons */
+    padding: 10px; /* Padding inside buttons */
+    background-color: crimson; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size for buttons */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #b30000; /* Darker shade on hover */
+}
+
+
+
+.notification {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    opacity: 0; /* Start as invisible */
+    transform: translateY(-20px) scale(0.9); /* Start slightly higher and smaller */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and position */
+}
+
+.notification.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0) scale(1); /* Move to original position and scale to normal size */
+    animation: colorChange 3s infinite; /* Apply the color change animation */
+}
+
+.notification.success {
+    background-color: green; /* Green for success */
+}
+
+.notification.error {
+    background-color: red; /* Red for error */
+    animation: colorChange 3s infinite; /* Use colorChange animation for error too */
+}
+
+
+
+
+
+
+/* Media query for responsiveness */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%; /* Responsive width for smaller screens */
+        padding: 20px; /* Adjusted padding */
+    }
+
+    h3 {
+        font-size: 20px; /* Font size for smaller screens */
+    }
+
+    button {
+        font-size: 16px; /* Font size for smaller screens */
+    }
+}
